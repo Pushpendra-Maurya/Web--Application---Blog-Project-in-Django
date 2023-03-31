@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block css %}
+{% endblock css %}
+
+{% block title %}
+<title>Blog : Home </title>
+{% endblock title %}
+
+
+{% block body %}
+
+<div class="container bg-danger text-center rounded-3 p-2">
+    <h1 class="display-6 text-light ">All Blogs <i class="bi bi-book-half"></i></h1>
+ </div>
+
+{% for i in blog %}
+
+<div class="container p-3 my-2 shadow ">
+    <h1>{{i.title}}</h1>
+    <p>{{i.desc}}</p>
+    <p class="text-end">{{i.created_at}}</p>
+</div>
+
+{% endfor %}
+
+
+
+{% endblock body %}
